@@ -11,6 +11,6 @@ public class IplBoardApplication {
 	}
 
 }
-// TODO: https://www.youtube.com/watch?v=KnGKZc31P5k&list=PLqq-6Pq4lTTa8V613TZhGq4o8hSgkMGQ0&index=13
-// TODO: Length 19.48
-// TODO: 3 number
+// TODO: https://www.youtube.com/watch?v=D7z5pgxgrTs&list=PLqq-6Pq4lTTa8V613TZhGq4o8hSgkMGQ0&index=5
+// TODO: Length 3:0
+// TODO: 5 number
