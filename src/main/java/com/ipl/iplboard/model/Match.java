@@ -2,7 +2,13 @@ package com.ipl.iplboard.model;
 
 import java.time.LocalDate;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Match {
+
+    @Id
     private long id;
     private String city;
     private LocalDate date;
@@ -151,7 +157,9 @@ public class Match {
     public Match() {
     }
 
-    public Match(long id, String city, LocalDate date, String playerOfMatch, String venue, String neutral_venue, String team1, String team2, String tossWinner, String tossDecision, String winner, String result, String resultMargin, String method, String umpire1, String umpire2) {
+    public Match(long id, String city, LocalDate date, String playerOfMatch, String venue, String neutral_venue,
+            String team1, String team2, String tossWinner, String tossDecision, String winner, String result,
+            String resultMargin, String method, String umpire1, String umpire2) {
         this.id = id;
         this.city = city;
         this.date = date;
@@ -172,23 +180,11 @@ public class Match {
 
     @Override
     public String toString() {
-        return "Match{" +
-                "id=" + id +
-                ", city='" + city + '\'' +
-                ", date=" + date +
-                ", playerOfMatch='" + playerOfMatch + '\'' +
-                ", venue='" + venue + '\'' +
-                ", neutral_venue='" + neutral_venue + '\'' +
-                ", team1='" + team1 + '\'' +
-                ", team2='" + team2 + '\'' +
-                ", tossWinner='" + tossWinner + '\'' +
-                ", tossDecision='" + tossDecision + '\'' +
-                ", winner='" + winner + '\'' +
-                ", result='" + result + '\'' +
-                ", resultMargin='" + resultMargin + '\'' +
-                ", method='" + method + '\'' +
-                ", umpire1='" + umpire1 + '\'' +
-                ", umpire2='" + umpire2 + '\'' +
-                '}';
+        return "Match{" + "id=" + id + ", city='" + city + '\'' + ", date=" + date + ", playerOfMatch='" + playerOfMatch
+                + '\'' + ", venue='" + venue + '\'' + ", neutral_venue='" + neutral_venue + '\'' + ", team1='" + team1
+                + '\'' + ", team2='" + team2 + '\'' + ", tossWinner='" + tossWinner + '\'' + ", tossDecision='"
+                + tossDecision + '\'' + ", winner='" + winner + '\'' + ", result='" + result + '\'' + ", resultMargin='"
+                + resultMargin + '\'' + ", method='" + method + '\'' + ", umpire1='" + umpire1 + '\'' + ", umpire2='"
+                + umpire2 + '\'' + '}';
     }
 }
