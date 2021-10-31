@@ -1,18 +1,19 @@
-import React, { useEffect, useState } from "react";
+import { React, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import MatchDetailCard from "../MatchDetailCard";
+
+import { YearSelector } from "../YearSelector";
+
 import "./MatchPage.scss";
 
-const MatchPage = () => {
+export const MatchPage = () => {
 	const [matches, setMatches] = useState([]);
 	const { teamName, year } = useParams();
-	const [url, seturl] = useState(
-		`http://localhost:8080/team/${teamName}/matches?year=${year}`
-	);
-
 	useEffect(() => {
 		const fetchMatches = async () => {
-			const response = await fetch(url);
+			const response = await fetch(
+				`${process.env.REACT_APP_API_ROOT_URL}/team/${teamName}/matches?year=${year}`
+			);
 			const data = await response.json();
 			setMatches(data);
 		};
@@ -21,7 +22,10 @@ const MatchPage = () => {
 
 	return (
 		<div className="MatchPage">
-			<h1>Match Pages</h1>
+			<div className="year-selector">
+				<h3> Select Year </h3>
+				<YearSelector teamName={teamName} />
+			</div>
 			<div>
 				<h1 className="page-heading">
 					{teamName} matches in {year}
@@ -37,5 +41,3 @@ const MatchPage = () => {
 		</div>
 	);
 };
-
-export default MatchPage;
