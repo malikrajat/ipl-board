@@ -17,7 +17,7 @@ const TeamPage = (props) => {
 			setteam(data);
 		};
 		fetchMatches();
-	}, []);
+	}, [teamName]);
 	if (!team || !team.teamName) {
 		return <h1> Team not found</h1>;
 	}

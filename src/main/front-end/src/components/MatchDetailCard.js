@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const MatchDetailCard = ({ match, teamName }) => {
 	if (!match) return null;
@@ -6,7 +7,9 @@ const MatchDetailCard = ({ match, teamName }) => {
 	return (
 		<div className="MatchDetailCard">
 			<h3>Latest Matches</h3>
-			<h4>vs {otherTeam}</h4>
+			<h4>
+				vs <Link to={"/team/" + otherTeam}> {otherTeam}</Link>
+			</h4>
 			<h2>{match.date}</h2>
 			<h3>{match.venue}</h3>
 			<p>
