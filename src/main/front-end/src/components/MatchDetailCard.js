@@ -1,14 +1,17 @@
 import React from "react";
 
-const MatchDetailCard = ({ match }) => {
+const MatchDetailCard = ({ match, teamName }) => {
 	if (!match) return null;
+	const otherTeam = teamName === match.teamName ? match.team1 : match.team2;
 	return (
 		<div className="MatchDetailCard">
-			<h3>Latest Matchs</h3>
-			<h4>Match Details</h4>
-			<h4>
-				{match.team1} Vs {match.team2}
-			</h4>
+			<h3>Latest Matches</h3>
+			<h4>vs {otherTeam}</h4>
+			<h2>{match.date}</h2>
+			<h3>{match.venue}</h3>
+			<p>
+				{match.matchWinner} Won By {match.resultMargin} {match.result}
+			</p>
 		</div>
 	);
 };

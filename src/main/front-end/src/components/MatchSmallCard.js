@@ -1,10 +1,13 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const MatchSmallCard = ({ match }) => {
+const MatchSmallCard = ({ match, teamName }) => {
+	if (!match) return null;
+	const otherTeam = teamName === match.teamName ? match.team1 : match.team2;
 	return (
 		<div className="MatchSmallCard">
 			<p>
-				{match.team1} Vs {match.team2}
+				Vs <Link to={"/team/" + otherTeam}> {otherTeam}</Link>
 			</p>
 		</div>
 	);
